@@ -17,6 +17,20 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 // Enable PWA bằng cách register service worker
-serviceWorkerRegistration.register();
+// Đăng ký service worker với xử lý cập nhật
+serviceWorkerRegistration.register({
+  onSuccess: (registration) => {
+    console.log('Service Worker registered:', registration.scope);
+  },
+  onUpdate: (registration) => {
+    // Hiển thị thông báo và reload
+    if (window.confirm('A new version is available. Reload now?')) {
+      // Unregister service worker cũ và reload
+      registration.unregister().then(() => {
+        window.location.reload();
+      });
+    }
+  },
+});
 
 reportWebVitals();

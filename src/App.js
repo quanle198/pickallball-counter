@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Calendar, ChevronDown, ChevronUp, CreditCard, Trophy, History, Edit3, X } from 'lucide-react';
+import { saveData, loadData } from './utils/storage'; // Giả sử bạn đã tạo các hàm này để lưu và tải dữ liệu
 
 export default function PickleballTicketTracker() {
 
@@ -28,6 +29,8 @@ export default function PickleballTicketTracker() {
     playDates: [],
     startDate: getTodayString()
   });
+
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
   
   const TICKET_LIMIT = 30;
 
@@ -41,26 +44,36 @@ export default function PickleballTicketTracker() {
     });
   };
 
+  useEffect(() => {
+  const handleOffline = () => setIsOffline(true);
+  const handleOnline = () => setIsOffline(false);
+  window.addEventListener('offline', handleOffline);
+  window.addEventListener('online', handleOnline);
+  return () => {
+    window.removeEventListener('offline', handleOffline);
+    window.removeEventListener('online', handleOnline);
+  };
+}, []);
+
   // Khôi phục dữ liệu khi component load
   useEffect(() => {
-    const savedData = JSON.parse(localStorage.getItem('pickleballTicketData') || '{}');
-    
-    if (savedData.currentTicket) {
-      setCurrentTicket(savedData.currentTicket);
-    }
-    if (savedData.completedTickets) {
-      setCompletedTickets(savedData.completedTickets);
-    }
-  }, []);
+  (async () => {
+    const savedData = await loadData();
+    if (savedData.currentTicket) setCurrentTicket(savedData.currentTicket);
+    if (savedData.completedTickets) setCompletedTickets(savedData.completedTickets);
+  })();
+}, []);
+
 
   // Lưu dữ liệu mỗi khi có thay đổi
   useEffect(() => {
-    const dataToSave = {
-      currentTicket: currentTicket,
-      completedTickets: completedTickets
-    };
-    localStorage.setItem('pickleballTicketData', JSON.stringify(dataToSave));
-  }, [currentTicket, completedTickets]);
+  const dataToSave = {
+    currentTicket,
+    completedTickets
+  };
+  saveData(dataToSave); // dùng localforage
+}, [currentTicket, completedTickets]);
+
 
   const handlePlay = () => {
     const today = getTodayString();
@@ -192,6 +205,12 @@ export default function PickleballTicketTracker() {
   const todayPlayed = currentTicket.playDates.includes(getTodayString());
   const isTicketFull = currentTicket.used >= TICKET_LIMIT;
   const progressPercent = (currentTicket.used / TICKET_LIMIT) * 100;
+
+  {isOffline && (
+  <div className="bg-yellow-200 p-2 text-center text-yellow-800">
+    Bạn đang offline. Dữ liệu vẫn được lưu cục bộ!
+  </div>
+)}
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-4">

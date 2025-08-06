@@ -320,7 +320,7 @@ export default function PickleballTicketTracker() {
               className="flex-1 bg-orange-500 text-white rounded-xl py-3 px-4 font-medium hover:bg-orange-600 transition-colors flex items-center justify-center space-x-2"
             >
               <Trophy size={18} />
-              <span>Các vé cũ</span>
+              <span>Vé cũ</span>
               {showCompletedHistory ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
             </button>
           </div>
@@ -408,7 +408,7 @@ export default function PickleballTicketTracker() {
           {!isTicketFull ? 'Mỗi ngày chỉ được chơi 1 lần' : 'Hãy mua vé mới để tiếp tục!'}
         </div>
         <div className="text-center mt-6 text-sm text-gray-500">
-          ver: 1.0.0 - <a href="https://www.facebook.com/quanfx/" style={{ textDecoration: 'underline' }}>QuanFX</a>
+          ver: 1.0.1 - <a href="https://www.facebook.com/quanfx/" style={{ textDecoration: 'underline' }}>QuanFX</a>
         </div>
 
         {/* Custom Confirm Modal */}

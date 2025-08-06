@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pickallball-counter/static/css/main.7104052a.css",
-    "main.js": "/pickallball-counter/static/js/main.7017ece1.js",
+    "main.css": "/pickallball-counter/static/css/main.2be05b53.css",
+    "main.js": "/pickallball-counter/static/js/main.89cf26ad.js",
     "static/js/453.d2427bce.chunk.js": "/pickallball-counter/static/js/453.d2427bce.chunk.js",
     "service-worker.js": "/pickallball-counter/service-worker.js",
     "index.html": "/pickallball-counter/index.html",
-    "main.7104052a.css.map": "/pickallball-counter/static/css/main.7104052a.css.map",
-    "main.7017ece1.js.map": "/pickallball-counter/static/js/main.7017ece1.js.map",
+    "main.2be05b53.css.map": "/pickallball-counter/static/css/main.2be05b53.css.map",
+    "main.89cf26ad.js.map": "/pickallball-counter/static/js/main.89cf26ad.js.map",
     "453.d2427bce.chunk.js.map": "/pickallball-counter/static/js/453.d2427bce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7104052a.css",
-    "static/js/main.7017ece1.js"
+    "static/css/main.2be05b53.css",
+    "static/js/main.89cf26ad.js"
   ]
 }

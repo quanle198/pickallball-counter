@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/quanle198/pickallball-counter/static/css/main.8d473a8e.css",
+    "main.js": "/quanle198/pickallball-counter/static/js/main.f75f80bb.js",
+    "static/js/453.d2427bce.chunk.js": "/quanle198/pickallball-counter/static/js/453.d2427bce.chunk.js",
+    "index.html": "/quanle198/pickallball-counter/index.html",
+    "main.8d473a8e.css.map": "/quanle198/pickallball-counter/static/css/main.8d473a8e.css.map",
+    "main.f75f80bb.js.map": "/quanle198/pickallball-counter/static/js/main.f75f80bb.js.map",
+    "453.d2427bce.chunk.js.map": "/quanle198/pickallball-counter/static/js/453.d2427bce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d473a8e.css",
+    "static/js/main.f75f80bb.js"
+  ]
+}

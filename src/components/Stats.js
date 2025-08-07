@@ -6,7 +6,7 @@ const Stats = ({ completedTickets, currentTicket }) => {
   const totalGamesPlayed = completedTickets.reduce((sum, ticket) => sum + ticket.used, 0) + currentTicket.used;
 
   return (
-    <div className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-4 text-center">
+    <div className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl p-4 text-center mt-6">
       <h3 className="font-medium text-gray-800 mb-2">📊 Thống kê</h3>
       <div className="grid grid-cols-2 gap-4 text-sm">
         <div>

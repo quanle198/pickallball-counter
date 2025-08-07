@@ -20,7 +20,6 @@ export default function PickleballTicketTracker() {
     confirmDelete,
     showDataEntry,
     dataEntry,
-    isOffline,
     todayPlayed,
     isTicketFull,
     
@@ -51,11 +50,6 @@ export default function PickleballTicketTracker() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-4">
-      {isOffline && (
-        <div className="bg-yellow-200 p-2 text-center text-yellow-800">
-          Bạn đang offline. Dữ liệu vẫn được lưu cục bộ!
-        </div>
-      )}
       
       <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md">
         {/* Header */}

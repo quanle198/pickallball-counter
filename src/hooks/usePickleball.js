@@ -30,7 +30,6 @@ export const usePickleball = () => {
     playDates: [],
     startDate: getTodayString()
   });
-  const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
   // Hàm để format ngày hiển thị
   const formatDateDisplay = (dateString) => {
@@ -41,18 +40,6 @@ export const usePickleball = () => {
       month: 'short'
     });
   };
-
-  // Handle offline/online status
-  useEffect(() => {
-    const handleOffline = () => setIsOffline(true);
-    const handleOnline = () => setIsOffline(false);
-    window.addEventListener('offline', handleOffline);
-    window.addEventListener('online', handleOnline);
-    return () => {
-      window.removeEventListener('offline', handleOffline);
-      window.removeEventListener('online', handleOnline);
-    };
-  }, []);
 
   // Khôi phục dữ liệu khi component load
   useEffect(() => {
@@ -204,7 +191,6 @@ export const usePickleball = () => {
     confirmDelete,
     showDataEntry,
     dataEntry,
-    isOffline,
     todayPlayed,
     isTicketFull,
     

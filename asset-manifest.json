@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/pickallball-counter/static/css/main.7064ef85.css",
-    "main.js": "/pickallball-counter/static/js/main.49ba7861.js",
+    "main.js": "/pickallball-counter/static/js/main.ef01cf73.js",
     "static/js/453.d2427bce.chunk.js": "/pickallball-counter/static/js/453.d2427bce.chunk.js",
     "service-worker.js": "/pickallball-counter/service-worker.js",
     "index.html": "/pickallball-counter/index.html",
     "main.7064ef85.css.map": "/pickallball-counter/static/css/main.7064ef85.css.map",
-    "main.49ba7861.js.map": "/pickallball-counter/static/js/main.49ba7861.js.map",
+    "main.ef01cf73.js.map": "/pickallball-counter/static/js/main.ef01cf73.js.map",
     "453.d2427bce.chunk.js.map": "/pickallball-counter/static/js/453.d2427bce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7064ef85.css",
-    "static/js/main.49ba7861.js"
+    "static/js/main.ef01cf73.js"
   ]
 }
